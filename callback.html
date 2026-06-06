@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><title>SnapStorm Auth</title></head>
+<body>
+<p id="msg">Completing authentication — please wait...</p>
+<script>
+  var p = window.location.search;
+  if (p.indexOf('code=') !== -1 || p.indexOf('error=') !== -1) {
+    window.location.href = 'http://localhost:8080' + p;
+  } else {
+    document.getElementById('msg').textContent = 'No auth code received.';
+  }
+</script>
+</body>
+</html>
